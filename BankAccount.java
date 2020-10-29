@@ -22,4 +22,14 @@ public class BankAccount{
     }
     return false;
   }
+  public boolean withdraw(double amount){
+    if (amount > 0 && balanceDouble >= amount){
+      balanceDouble -= amount;
+      return true;
+    }
+    return false;
+  }
+  public String toString(){
+    return String.valueOf(accountInt) + "\t" + String.valueOf(balanceDouble);
+  }
 }
