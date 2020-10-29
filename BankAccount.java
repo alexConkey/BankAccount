@@ -15,7 +15,11 @@ public class BankAccount{
   public void setPassword(String newPass){
     passwordStr = newPass;
   }
-  public boolean deposit(double ammount){
-    
+  public boolean deposit(double amount){
+    if (amount > 0){
+      balanceDouble += amount;
+      return true;
+    }
+    return false;
   }
 }
