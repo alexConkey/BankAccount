@@ -32,7 +32,13 @@ public class BankAccount{
   public String toString(){
     return "#" + String.valueOf(accountInt) + "\t$" + String.valueOf(balanceDouble);
   }
-  private boolean authenticate(String password){
-    return(passwordStr == password);
+  public boolean authenticate(String password){
+    return (passwordStr == password);
+  }
+  public boolean transferTo(BankAccount other, double amount, String password){
+    if (authenticate(password)){
+      return (withdraw(amount) && other.deposit(amount));
+    }
+    return false;
   }
 }
