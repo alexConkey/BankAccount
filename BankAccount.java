@@ -1,5 +1,5 @@
 public class BankAccount{
-  double balanceDouble = 0;
+  double balanceDouble = 0.00;
   int accountInt = 0;
   String passwordStr = "";
   public BankAccount(int accountId, String password){
@@ -30,6 +30,9 @@ public class BankAccount{
     return false;
   }
   public String toString(){
-    return String.valueOf(accountInt) + "\t" + String.valueOf(balanceDouble);
+    return "#" + String.valueOf(accountInt) + "\t$" + String.valueOf(balanceDouble);
+  }
+  private boolean authenticate(String password){
+    return(passwordStr == password);
   }
 }
